@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suporte · Pupila</title>
+<meta name="description" content="Central de suporte do app Pupila: perguntas frequentes e contato.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#F3BE22">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="index.html"><img src="assets/logo.png" alt="Logo do Pupila"><span>Pupila</span></a>
+    <nav class="nav">
+      <a href="index.html">Início</a>
+      <a href="privacidade.html">Privacidade</a>
+      <a href="suporte.html" aria-current="page">Suporte</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="cabeca-pagina"><div class="wrap">
+    <h1>Suporte</h1>
+    <p>Encontrou um problema ou tem uma sugestão? A gente responde.</p>
+  </div></div>
+
+  <section class="bloco">
+    <div class="wrap duas-col">
+      <div>
+        <span class="etiqueta">Perguntas frequentes</span>
+        <h2>Antes de escrever</h2>
+        <details>
+          <summary>O app não abre a câmera. O que eu faço?</summary>
+          <p>Vá em Ajustes › Pupila e confirme que o acesso à Câmera está ativado. Depois feche o app completamente e abra de novo.</p>
+        </details>
+        <details>
+          <summary>Minhas fotos não aparecem na galeria.</summary>
+          <p>Verifique se o Pupila tem permissão para acessar Fotos (Ajustes › Pupila › Fotos). Escolha “Acesso total” ou “Adicionar apenas” para que as capturas sejam salvas.</p>
+        </details>
+        <details>
+          <summary>O Pupila envia minhas fotos para algum servidor?</summary>
+          <p>Não. Suas fotos ficam no seu dispositivo. Leia a <a href="privacidade.html">Política de Privacidade</a> para mais detalhes.</p>
+        </details>
+        <details>
+          <summary>Como peço a exclusão dos meus dados?</summary>
+          <p>Dentro do app, vá em Configurações e selecione “Excluir conta”. Você perderá todas as suas fotos e dados do app.</p>
+        </details>
+       
+      </div>
+
+      <div>
+        <span class="etiqueta">Fale com a gente</span>
+        <h2>Enviar mensagem</h2>
+        <form class="suporte" id="form-suporte">
+          <label>Nome
+            <input name="nome" required autocomplete="name">
+          </label>
+          <label>E-mail para resposta
+            <input name="email" type="email" required autocomplete="email">
+          </label>
+          <label>Assunto
+            <select name="assunto">
+              <option>Problema técnico</option>
+              <option>Dúvida sobre o app</option>
+              <option>Sugestão</option>
+              <option>Privacidade e dados</option>
+              <option>Outro</option>
+            </select>
+          </label>
+          <label>Modelo do iPhone e versão do iOS <span style="font-weight:400">(opcional)</span>
+            <input name="dispositivo" placeholder="Ex.: iPhone 15, iOS 18.1">
+          </label>
+          <label>Mensagem
+            <textarea name="mensagem" required placeholder="Conte o que aconteceu…"></textarea>
+          </label>
+          <button class="btn btn-escuro" type="submit">Enviar</button>
+          <p class="aviso-ok" id="aviso-ok">Abrimos seu app de e-mail com a mensagem pronta. É só tocar em enviar.</p>
+          <p class="nota">Ao enviar, seu app de e-mail será aberto com a mensagem preenchida. Se preferir, escreva direto para <a class="email-suporte" href="mailto:suporte@seudominio.com">suporte@seudominio.com</a>.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+  // >>> Troque aqui pelo seu e-mail de suporte <<<
+  const EMAIL_SUPORTE = "suporte@seudominio.com";
+
+  document.querySelectorAll(".email-suporte").forEach(a => { a.href = "mailto:" + EMAIL_SUPORTE; a.textContent = EMAIL_SUPORTE; });
+  document.getElementById("form-suporte").addEventListener("submit", e => {
+    e.preventDefault();
+    const f = new FormData(e.target);
+    const assunto = `[Pupila] ${f.get("assunto")}`;
+    const corpo = `${f.get("mensagem")}\n\n—\nNome: ${f.get("nome")}\nE-mail: ${f.get("email")}\nDispositivo: ${f.get("dispositivo") || "não informado"}`;
+    window.location.href = `mailto:${EMAIL_SUPORTE}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
+    document.getElementById("aviso-ok").style.display = "block";
+  });
+</script>
+<footer class="rodape">
+  <div class="wrap">
+    <span>© <span id="ano">2026</span> Pupila. Todos os direitos reservados.</span>
+    <nav><a href="privacidade.html">Política de Privacidade</a><a href="suporte.html">Suporte</a></nav>
+  </div>
+</footer>
+<script>document.getElementById("ano").textContent = new Date().getFullYear();</script>
+</body>
+</html>

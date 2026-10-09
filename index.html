@@ -1,3 +1,71 @@
-<html>
- PupilaApp
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pupila</title>
+<meta name="description" content="Pupila — informações sobre o app, política de privacidade e suporte.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#F3BE22">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="index.html"><img src="assets/logo.png" alt="Logo do Pupila"><span>Pupila</span></a>
+    <nav class="nav">
+      <a href="index.html" aria-current="page">Início</a>
+      <a href="privacidade.html">Privacidade</a>
+      <a href="suporte.html">Suporte</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Pupila<span>.</span></h1>
+        <p class="lead"> Participe de uma comunidade ativa de fotógrafos em que a sua foto é vista. </p>
+        <div class="botoes">
+          <a class="btn btn-escuro" href="#baixar">Baixar o app</a>
+          <a class="btn btn-claro" href="suporte.html">Precisa de ajuda?</a>
+        </div>
+      </div>
+      <div class="logo-grande"><img src="assets/logo.png" alt="Logo do Pupila: a letra P com uma lente de câmera"></div>
+    </div>
+  </section>
+
+  <section class="bloco" id="sobre">
+    <div class="wrap">
+      <span class="etiqueta">Sobre o app</span>
+      <h2>O que o Pupila é</h2>
+      <p class="sub">Uma galeria compartilhada de fotos, criada para incentivar a fotografia e aproximar fotógrafos. </p>
+      <div class="grade">
+        <div class="cartao"><div class="num">1</div><h3>Ao entrar</h3><p>Veja opções semanais de temas para participar das galerias públicas. </p></div>
+        <div class="cartao"><div class="num">2</div><h3>Não perca os prazos</h3><p>Fique atento ao limite do prazo e se torne visível.</p></div>
+        <div class="cartao"><div class="num">3</div><h3>Privacidade em primeiro lugar</h3><p>Suas fotos são suas. Veja na nossa política como tratamos seus dados.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faixa" id="baixar">
+    <div class="wrap">
+      <h2>Disponível em breve na App Store.</h2>
+      <!-- Quando o app for publicado, troque o href abaixo pelo link da App Store -->
+      <a class="btn" href="suporte.html">Fale com a gente</a>
+    </div>
+  </section>
+</main>
+<footer class="rodape">
+  <div class="wrap">
+    <span>© <span id="ano">2026</span> Pupila. Todos os direitos reservados.</span>
+    <nav><a href="privacidade.html">Política de Privacidade</a><a href="suporte.html">Suporte</a></nav>
+  </div>
+</footer>
+<script>document.getElementById("ano").textContent = new Date().getFullYear();</script>
+</body>
 </html>
