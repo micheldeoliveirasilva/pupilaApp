@@ -84,6 +84,8 @@ h3 { font-size: 20px; margin: 0 0 6px; }
 .texto h2 { font-size: 24px; letter-spacing: -.3px; margin: 40px 0 10px; }
 .texto ul { padding-left: 22px; }
 .texto li { margin-bottom: 6px; }
+.texto h3 { font-size: 18px; margin: 24px 0 8px; }
+.texto ul ul { margin-top: 8px; }
 .indice { background: var(--cartao); border: 1px solid var(--linha); border-radius: 16px; padding: 20px 24px; }
 .indice ol { margin: 8px 0 0; padding-left: 20px; columns: 2; column-gap: 32px; }
 .indice a { text-decoration: none; }
