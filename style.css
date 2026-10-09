@@ -66,10 +66,10 @@ h2 { font-family: "Archivo Black", sans-serif; font-size: clamp(30px, 5vw, 44px)
 h3 { font-size: 20px; margin: 0 0 6px; }
 .sub { color: var(--suave); max-width: 60ch; margin: 0 0 40px; }
 
-.grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.cartao { background: var(--cartao); border: 1px solid var(--linha); border-radius: 20px; padding: 26px; }
-.cartao .num { font-family: "Archivo Black", sans-serif; font-size: 15px; width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; background: var(--amarelo); color: var(--preto); margin-bottom: 16px; }
-.cartao p { margin: 0; color: var(--suave); }
+.lista { border-top: 2px solid var(--tinta); max-width: 880px; }
+.lista .item { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 32px; align-items: baseline; padding: 28px 0; border-bottom: 1px solid var(--linha); }
+.lista h3 { font-family: "Archivo Black", sans-serif; font-size: clamp(22px, 3vw, 28px); line-height: 1.15; letter-spacing: -.5px; margin: 0; }
+.lista p { margin: 0; color: var(--suave); font-size: 18px; }
 
 .faixa { background: var(--preto); color: #F6F1E1; }
 .faixa .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; padding-top: 48px; padding-bottom: 48px; }
@@ -119,7 +119,7 @@ form.suporte .btn { justify-content: center; }
   .hero .wrap, .duas-col { grid-template-columns: 1fr; }
   .hero .logo-grande { order: -1; padding: 24px 32px; }
   .hero .logo-grande img { height: 140px; }
-  .grade { grid-template-columns: 1fr; }
+  .lista .item { grid-template-columns: 1fr; gap: 8px; padding: 22px 0; }
   .indice ol { columns: 1; }
   .nav { gap: 14px; font-size: 14px; }
   .marca span { display: none; }
